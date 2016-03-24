@@ -31,8 +31,7 @@ create external table call_center(
 ,     cc_gmt_offset             float                  
 ,     cc_tax_percentage         float
 )
-row format delimited fields terminated by '|' 
-location '${LOCATION}/call_center';
+
 
 create external table catalog_page(
       cp_catalog_page_sk        int               
@@ -45,8 +44,7 @@ create external table catalog_page(
 ,     cp_description            string                  
 ,     cp_type                   string
 )
-row format delimited fields terminated by '|' 
-location '${LOCATION}/catalog_page';
+
 
 create external table catalog_returns
 (
@@ -78,8 +76,7 @@ create external table catalog_returns
     cr_store_credit           float,
     cr_net_loss               float
 )
-row format delimited fields terminated by '|' 
-location '${LOCATION}/catalog_returns';
+
 
 create external table catalog_sales
 (
@@ -118,8 +115,7 @@ create external table catalog_sales
     cs_net_paid_inc_ship_tax  float,
     cs_net_profit             float
 )
-row format delimited fields terminated by '|' 
-location '${LOCATION}/catalog_sales';
+
 
 create external table customer_address
 (
@@ -135,10 +131,8 @@ create external table customer_address
     ca_zip                    string,
     ca_country                string,
     ca_gmt_offset             float,
-    ca_location_type          string
-)
-row format delimited fields terminated by '|' 
-location '${LOCATION}/customer_address';
+    ca_)
+
 
 create external table customer_demographics
 (
@@ -152,8 +146,7 @@ create external table customer_demographics
     cd_dep_employed_count     int,
     cd_dep_college_count      int 
 )
-row format delimited fields terminated by '|' 
-location '${LOCATION}/customer_demographics';
+
 
 create external table customer
 (
@@ -176,8 +169,7 @@ create external table customer
     c_email_address           string,
     c_last_review_date        string
 )
-row format delimited fields terminated by '|' 
-location '${LOCATION}/customer';
+
 
 create external table date_dim
 (
@@ -210,8 +202,7 @@ create external table date_dim
     d_current_quarter         string,
     d_current_year            string 
 )
-row format delimited fields terminated by '|' 
-location '${LOCATION}/date_dim';
+
 
 create external table household_demographics
 (
@@ -221,26 +212,23 @@ create external table household_demographics
     hd_dep_count              int,
     hd_vehicle_count          int
 )
-row format delimited fields terminated by '|' 
-location '${LOCATION}/household_demographics';
+
 
 create external table income_band(
       ib_income_band_sk         int               
 ,     ib_lower_bound            int                       
 ,     ib_upper_bound            int
 )
-row format delimited fields terminated by '|' 
-location '${LOCATION}/income_band';
+
 
 create external table inventory
 (
-    inv_date_sk			int,
-    inv_item_sk			int,
-    inv_warehouse_sk		int,
-    inv_quantity_on_hand	int
+    inv_date_sk     int,
+    inv_item_sk     int,
+    inv_warehouse_sk    int,
+    inv_quantity_on_hand  int
 )
-row format delimited fields terminated by '|' 
-location '${LOCATION}/inventory';
+
 
 create external table item
 (
@@ -267,8 +255,7 @@ create external table item
     i_manager_id              int,
     i_product_name            string
 )
-row format delimited fields terminated by '|' 
-location '${LOCATION}/item';
+
 
 create external table promotion
 (
@@ -292,16 +279,14 @@ create external table promotion
     p_purpose                 string,
     p_discount_active         string 
 )
-row format delimited fields terminated by '|' 
-location '${LOCATION}/promotion';
+
 
 create external table reason(
       r_reason_sk               int               
 ,     r_reason_id               string              
 ,     r_reason_desc             string                
 )
-row format delimited fields terminated by '|' 
-location '${LOCATION}/reason';
+
 
 create external table ship_mode(
       sm_ship_mode_sk           int               
@@ -311,8 +296,7 @@ create external table ship_mode(
 ,     sm_carrier                string                      
 ,     sm_contract               string                      
 )
-row format delimited fields terminated by '|' 
-location '${LOCATION}/ship_mode';
+
 
 create external table store_returns
 (
@@ -337,8 +321,7 @@ create external table store_returns
     sr_store_credit           float,
     sr_net_loss               float             
 )
-row format delimited fields terminated by '|' 
-location '${LOCATION}/store_returns';
+
 
 create external table store_sales
 (
@@ -366,8 +349,7 @@ create external table store_sales
     ss_net_paid_inc_tax       float,
     ss_net_profit             float                  
 )
-row format delimited fields terminated by '|' 
-location '${LOCATION}/store_sales';
+
 
 create external table store
 (
@@ -401,8 +383,7 @@ create external table store
     s_gmt_offset              float,
     s_tax_precentage          float                  
 )
-row format delimited fields terminated by '|' 
-location '${LOCATION}/store';
+
 
 create external table time_dim
 (
@@ -417,8 +398,7 @@ create external table time_dim
     t_sub_shift               string,
     t_meal_time               string
 )
-row format delimited fields terminated by '|' 
-location '${LOCATION}/time_dim';
+
 
 create external table warehouse(
       w_warehouse_sk            int               
@@ -436,8 +416,7 @@ create external table warehouse(
 ,     w_country                 string                   
 ,     w_gmt_offset              float                  
 )
-row format delimited fields terminated by '|' 
-location '${LOCATION}/warehouse';
+
 
 create external table web_page(
       wp_web_page_sk            int               
@@ -455,8 +434,7 @@ create external table web_page(
 ,     wp_image_count            int                       
 ,     wp_max_ad_count           int
 )
-row format delimited fields terminated by '|' 
-location '${LOCATION}/web_page';
+
 
 create external table web_returns
 (
@@ -485,8 +463,7 @@ create external table web_returns
     wr_account_credit         float,
     wr_net_loss               float
 )
-row format delimited fields terminated by '|' 
-location '${LOCATION}/web_returns';
+
 
 create external table web_sales
 (
@@ -525,8 +502,7 @@ create external table web_sales
     ws_net_paid_inc_ship_tax  float,
     ws_net_profit             float
 )
-row format delimited fields terminated by '|' 
-location '${LOCATION}/web_sales';
+
 
 create external table web_site
 (
@@ -557,5 +533,4 @@ create external table web_site
     web_gmt_offset        float,
     web_tax_percentage    float
 )
-row format delimited fields terminated by '|' 
-location '${LOCATION}/web_site';
+
